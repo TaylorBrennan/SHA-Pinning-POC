@@ -4,21 +4,8 @@ on:
   workflow_call:
 
 jobs:
-  comment:
+  log:
     runs-on: ubuntu-latest
     steps:
-      - name: Comment on PR
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const pr = context.payload.pull_request;
-            if (!pr) {
-              core.setFailed("Not a pull request event");
-              return;
-            }
-            github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: pr.number,
-              body: "A commit"
-            });
+      - name: Write a log message
+        run: echo "A commit"
