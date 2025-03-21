@@ -2,10 +2,6 @@ name: Comment on PR Commit
 
 on:
   workflow_call:
-    comment_message:
-      description: "Message to post as comment"
-      required: false
-      default: "A commit has been pushed"
 
 jobs:
   comment:
@@ -24,5 +20,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pr.number,
-              body: inputs.comment_message
+              body: "A commit"
             });
