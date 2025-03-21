@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Write a log message
-        run: echo "A commit"
+        run: echo "A commit after pinning and referencing"
