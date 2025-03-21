@@ -2,10 +2,11 @@ name: Comment on PR Commit
 
 on:
   workflow_call:
-    comment_message:
-      description: "Message to post as comment"
-      required: false
-      default: "A commit has been pushed"
+    inputs:
+      comment_message:
+        description: "Message to post as comment"
+        required: false
+        default: "A commit has been pushed"
 
 jobs:
   comment:
